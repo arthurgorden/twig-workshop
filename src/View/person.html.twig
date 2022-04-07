@@ -9,8 +9,12 @@
 	</head>
 
 	<body>
-		<h1>Hello
-			{{ name }}
-			!</h1>
+    {% include "_header.html.twig" %}
+		<ul>
+			{% for person in persons|filter(person => person.age > 18) %}
+				<li>{{ person.name }}</li>
+			{% endfor %}
+		</ul>
+
 	</body>
 </html>
